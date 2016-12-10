@@ -1,0 +1,16 @@
+<h3 style="text-align: center;">Consulta de clientes/módulos</h3>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="client_system in $ctrl.client_systems">
+        <td>{{client_system.name}}</td>
+        <td>{{client_system.description}}</td>
+      </tr>
+    </tbody>
+  </table>

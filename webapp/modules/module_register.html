@@ -1,0 +1,19 @@
+<form class="form-signin">
+        <h2 class="form-signin-heading" style="text-align: center;">Cadastro de módulo</h2>
+
+        <label for="inputName" class="sr-only">Nome</label>
+        <input type="text" id="name" ng-model="$ctrl.module.name" class="form-control" placeholder="Nome" required autofocus>
+        <br>
+
+        <label for="inputDescription" class="sr-only">Descrição</label>
+        <input type="text" id="description" ng-model="$ctrl.module.description" class="form-control" placeholder="Descrição" required>
+        <br>
+
+		<label for="inputDescription" class="sr-only">Sistema</label>
+        <select class="form-control" id="id_system" ng-model="$ctrl.module.id_system" required>
+        	<option ng-repeat="system in $ctrl.systems" value="{{system.id}}">{{system.name}}</option>
+        </select>
+        <br>
+        
+        <button class="btn btn-primary btn-block" ng-click="$ctrl.sendData($ctrl.module)" type="submit">Cadastrar</button>
+</form>

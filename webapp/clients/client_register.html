@@ -1,0 +1,12 @@
+<form class="form-signin">
+        <h2 class="form-signin-heading" style="text-align: center;">Cadastro de cliente</h2>
+
+        <label for="inputName" class="sr-only">Nome</label>
+        <input type="text" id="name" ng-model="$ctrl.client.name" class="form-control" placeholder="Nome" required autofocus>
+        <br>
+        <label for="inputTelephone" class="sr-only">Telefone</label>
+        <input type="text" id="telephone" ng-model="$ctrl.client.phone" class="form-control" placeholder="Telefone" required>
+        <br>
+        <button class="btn btn-primary btn-block" type="submit" ng-click="$ctrl.sendData($ctrl.client)">Cadastrar</button>
+        <!--{{ $ctrl.PostDataResponse }}-->
+</form>
