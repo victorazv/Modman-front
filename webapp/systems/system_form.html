@@ -1,0 +1,17 @@
+<div style="text-align: center;">
+  	<button class="btn btn-primary" ui-sref="systems">Voltar</button>
+  	<h2>{{$ctrl.title}}</h2>
+  	<br>
+</div>
+
+<form class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12 form-horizontal">
+    <label>Nome <span style="color:#e74c3c">*</span></label>
+    <input type="text" id="name" ng-model="$ctrl.system.name" class="form-control" required autofocus>
+    <br>
+
+    <label>Descrição <span style="color:#e74c3c">*</span></label>
+    <input type="text" id="description" ng-model="$ctrl.system.description" class="form-control" required autofocus>
+    <br>
+
+    <button class="btn btn-primary btn-block" ng-click="$ctrl.registerData($ctrl.system)" type="submit">{{$ctrl.buttonLabel}}</button>
+</form>

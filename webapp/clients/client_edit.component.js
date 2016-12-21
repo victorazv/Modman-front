@@ -1,17 +1,25 @@
-function ClientEditComponentController($http, ENVIROMENT, $stateParams){
+function ClientEditComponentController($http, ENVIROMENT, $stateParams, ngToast){
 	var self = this;
+	self.registerData = registerData;
+	self.title = "Edição de cliente";
+	self.buttonLabel = "Salvar";
 
-	self.updateData = updateData;
-	self.client = $stateParams.client;
-
-	function updateData(client){
-		return $http.put(ENVIROMENT + 'api/client/' + client).then(function(response){
+	function registerData(client){
+		return $http.put(ENVIROMENT + 'api/client/' + client.id, client).then(function(response){
+			ngToast.create('Registro atualizado com sucesso !');
+		}).catch(function(){
+			ngToast.create({
+			  className: 'warning',
+			  content: 'Não foi possível atualizar o registro !'
+			});
 		});
 	}
-
 }
 
 modman.component('modmanClientEdit', {
-	templateUrl: 'webapp/clients/client_edit.html',
+	templateUrl: 'webapp/clients/client_form.html',
 	controller: ClientEditComponentController,
+	bindings: {
+		client: '<'
+	}
 });

@@ -1,17 +1,25 @@
-function ModuleRegisterComponentController($http, ENVIROMENT){
+function ModuleRegisterComponentController($http, ENVIROMENT, ngToast, $location){
 	var self = this;
 	self.module = {};
-	self.sendData = sendData;
+	self.registerData = registerData;
+	self.title = "Cadastro de módulo";
+	self.buttonLabel = "Cadastrar"
 
-	function sendData(module){
+	function registerData(module){
 		return $http.post(ENVIROMENT + 'api/module', module).then(function(response){
-			console.log(response);
+			ngToast.create('Registro inserido com sucesso !');
+			$location.path('module_edit/' + response.data.id);
+		}).catch(function(){
+			ngToast.create({
+			  className: 'warning',
+			  content: 'Não foi possível inserir o registro !'
+			});
 		});
 	}
 }
 
 modman.component('modmanModuleRegister', {
-	templateUrl: 'webapp/modules/module_register.html',
+	templateUrl: 'webapp/modules/module_form.html',
 	controller: ModuleRegisterComponentController,
 	bindings: {
 		systems: '<'

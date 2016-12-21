@@ -1,0 +1,19 @@
+<div style="text-align: center;">
+  	<button class="btn btn-primary" ui-sref="functionalities">Voltar</button>
+    <h2>{{$ctrl.title}}</h2>
+    <br>
+</div>
+
+<form class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12 form-horizontal">
+	<label>Módulo <span style="color:#e74c3c">*</span></label>
+    <select id="module" class="form-control" ng-model="$ctrl.functionality.id_module" ng-options="module.id as module.name for module in $ctrl.modules" required autofocus>
+        <option value=""></option>
+    </select>
+    <br>
+
+    <label>Funcionalidade <span style="color:#e74c3c">*</span></label>
+    <input type="text" id="functionality" ng-model="$ctrl.functionality.functionality" class="form-control" required autofocus>
+    <br>
+    
+    <button class="btn btn-primary btn-block" type="submit" ng-click="$ctrl.registerData($ctrl.functionality)">{{$ctrl.buttonLabel}}</button>
+</form>
