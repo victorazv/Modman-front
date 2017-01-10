@@ -213,7 +213,7 @@ var systemState = {
 
 //=================Sistema/Módulo=================
 
-  var systemModuleState = {
+var systemModuleState = {
     name: 'system_modules',
     url: '/system_modules',
     template: "<modman-system-modules systemmodules='$resolve.systemmodules'></modman-system-modules>",
@@ -227,25 +227,25 @@ var systemState = {
     }
   }
 
-  var systemModuleRegisterState = {
-    name: 'system_module_register',
-    url: '/system_module_register',
-    template: "<modman-system-module-register modules='$resolve.modules' systems='$resolve.systems'></modman-system-module-register>",
-    resolve: {
-      modules: function($http){ 
-        return $http.get(ENVIROMENT + "api/module").then(function (response) {
-            return response.data;
-        });
-      },
-      systems: function($http){ 
-        return $http.get(ENVIROMENT + "api/system/").then(function (response) {
-            return response.data;
-        });
-      }
+var systemModuleRegisterState = {
+  name: 'system_module_register',
+  url: '/system_module_register',
+  template: "<modman-system-module-register modules='$resolve.modules' systems='$resolve.systems'></modman-system-module-register>",
+  resolve: {
+    modules: function($http){ 
+      return $http.get(ENVIROMENT + "api/module").then(function (response) {
+          return response.data;
+      });
+    },
+    systems: function($http){ 
+      return $http.get(ENVIROMENT + "api/system/").then(function (response) {
+          return response.data;
+      });
     }
   }
+}
 
-var systemModuleEditState = {
+  var systemModuleEditState = {
     name: 'system_module_edit',
     url: '/system_module_edit/:idsystemmodule',
     template: "<modman-system-module-edit systemmodule='$resolve.systemmodule' modules='$resolve.modules' systems='$resolve.systems'></modman-system-module-edit>",
@@ -314,6 +314,67 @@ var systemModuleEditState = {
     }
   } 
 
+//=================Cliente-Sistema/Módulo-Funcionalidade/Perfil=================
+
+  var cliSysModFuncProfileState = {
+    name: 'cli_sys_mod_func_profile',
+    url: '/cli_sys_mod_func_profile',
+    template: "<modman-cli-sys_mod-func-profile clisysmodfuncprofiles='$resolve.clisysmodfuncprofiles'></modman-cli-sys-mod-func-profile>",
+    resolve: {
+      clisysmodfuncprofiles: function($http){ 
+        return $http.get(ENVIROMENT + "api/cli_sys_mod_func_profile/").then(function (response) {
+            return response.data;
+        });
+      }
+    }
+  }
+
+  var cliSysModFuncProfileRegisterState = {
+    name: 'cli_sys_mod_func_profile_register',
+    url: '/cli_sys_mod_func_profile_register',
+    template: "<modman-cli-sys_mod-func-profile-register clientsystems='$resolve.clientsystems' module_functionalities='$resolve.module_functionalities' profiles='$resolve.profiles'></modman-cli-sys_mod-func-profile-register>",
+    resolve: {
+      clientsystems: function($http, $stateParams){ 
+        return $http.get(ENVIROMENT + "api/client_system/").then(function (response) {
+            return response.data;
+        });
+      },
+      module_functionalities: function($http){ 
+        return $http.get(ENVIROMENT + "api/module_functionality").then(function (response) {
+            return response.data;
+        });
+      },
+      profiles: function($http){ 
+        return $http.get(ENVIROMENT + "api/profile").then(function (response) {
+            return response.data;
+        });
+      }
+    }
+  }
+
+var cliSysModFuncProfileEditState = {
+    name: 'cli_sys_mod_func_profile_edit',
+    url: '/cli_sys_mod_func_profile_edit/:idclisysmodfuncprofile',
+    template: "<modman-cli-sys_mod-func-profile-edit clientsystems='$resolve.clientsystems' module_functionalities='$resolve.module_functionalities' profiles='$resolve.profiles'></modman-cli-sys_mod-func-profile-edit>",
+    resolve: {
+      clientsystems: function($http, $stateParams){ 
+        return $http.get(ENVIROMENT + "api/client_system/").then(function (response) {
+            return response.data;
+        });
+      },
+      module_functionalities: function($http){ 
+        return $http.get(ENVIROMENT + "api/module_functionality").then(function (response) {
+            return response.data;
+        });
+      },
+      profiles: function($http){ 
+        return $http.get(ENVIROMENT + "api/profile").then(function (response) {
+            return response.data;
+        });
+      }
+    }
+  }
+
   $stateProvider.state(homeState);
   $stateProvider.state(loginState);
 
@@ -344,5 +405,9 @@ var systemModuleEditState = {
   $stateProvider.state(functionalityState);
   $stateProvider.state(functionalityRegisterState);
   $stateProvider.state(functionalityEditState);
+
+  $stateProvider.state(cliSysModFuncProfileState);
+  $stateProvider.state(cliSysModFuncProfileRegisterState);
+  $stateProvider.state(cliSysModFuncProfileEditState);
 
 });
