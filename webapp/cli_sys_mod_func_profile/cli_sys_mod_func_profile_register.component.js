@@ -2,7 +2,7 @@ function CliSysModFuncProfileRegisterComponentController($http, ENVIROMENT, ngTo
 	var self = this;
 	self.clientsystem = {};
 	self.registerData = registerData;
-	self.title = "Cadastro de Funcionalidade/Cliente";
+	self.title = "Cadastro de Funcionalidade/Cliente/Perfil";
 	self.buttonLabel = "Cadastrar"
 
 	function registerData(clisysmodfuncprofile){
@@ -23,7 +23,7 @@ modman.component('modmanCliSysModFuncProfileRegister', {
 	controller: CliSysModFuncProfileRegisterComponentController,
 	bindings:{
 		clientsystems: '<',
-		module_functionalities: '<',
+		modulefunctionalities: '<',
 		profiles: '<'
 	}
 });

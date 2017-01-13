@@ -1,5 +1,5 @@
 modman.config(function($stateProvider, ENVIROMENT) {
-  
+
   var homeState = {
     name: 'home',
     url: '/',
@@ -19,7 +19,7 @@ modman.config(function($stateProvider, ENVIROMENT) {
     url: '/clients',
     template: "<modman-clients clients='$resolve.clients'></modman-clients>",
     resolve: {
-      clients: function($http){ 
+      clients: function($http){
         return $http.get(ENVIROMENT + "api/client").then(function (response) {
             return response.data;
         });
@@ -44,14 +44,14 @@ modman.config(function($stateProvider, ENVIROMENT) {
         });
       }
     }
-  } 
+  }
 
 var systemState = {
     name: 'systems',
     url: '/systems',
     template: "<modman-systems systems='$resolve.systems'></modman-systems>",
     resolve: {
-      systems: function($http){ 
+      systems: function($http){
         return $http.get(ENVIROMENT + "api/system/").then(function (response) {
             return response.data;
         });
@@ -78,7 +78,7 @@ var systemState = {
         });
       }
     }
-  } 
+  }
 
 //=================Módulo=================
 
@@ -87,7 +87,7 @@ var systemState = {
     url: '/modules',
     template: "<modman-modules modules='$resolve.modules'></modman-modules>",
     resolve: {
-      modules: function($http){ 
+      modules: function($http){
         return $http.get(ENVIROMENT + "api/module/").then(function (response) {
             return response.data;
         });
@@ -121,7 +121,7 @@ var systemState = {
     url: '/profiles',
     template: "<modman-profiles profiles='$resolve.profiles'></modman-profiles>",
     resolve: {
-      profiles: function($http){ 
+      profiles: function($http){
         return $http.get(ENVIROMENT + "api/profile/").then(function (response) {
             return response.data;
         });
@@ -134,7 +134,7 @@ var systemState = {
     url: '/profile_register',
     template: "<modman-profile-register profiles='$resolve.profiles'></modman-profile-register>",
     resolve: {
-      profiles: function($http){ 
+      profiles: function($http){
         return $http.get(ENVIROMENT + "api/profile/").then(function (response) {
             return response.data;
         });
@@ -147,13 +147,13 @@ var systemState = {
     url: '/profile_edit/:id_profile',
     template: "<modman-profile-edit profile='$resolve.profile'></modman-profile-edit>",
     resolve: {
-      profile: function($http, $stateParams){ 
+      profile: function($http, $stateParams){
         return $http.get(ENVIROMENT + 'api/profile/' + $stateParams.id_profile).then(function (response) {
             return response.data;
         });
       }
     }
-  } 
+  }
 
 //=================Cliente/Sistema=================
 
@@ -162,7 +162,7 @@ var systemState = {
     url: '/client_systems',
     template: "<modman-client-systems clientsystems='$resolve.clientsystems'></modman-client-systems>",
     resolve: {
-      clientsystems: function($http){ 
+      clientsystems: function($http){
         return $http.get(ENVIROMENT + "api/client_system/").then(function (response) {
             return response.data;
         });
@@ -175,12 +175,12 @@ var systemState = {
     url: '/client_system_register',
     template: "<modman-client-system-register clients='$resolve.clients' systems='$resolve.systems'></modman-client-system-register>",
     resolve: {
-      clients: function($http){ 
+      clients: function($http){
         return $http.get(ENVIROMENT + "api/client").then(function (response) {
             return response.data;
         });
       },
-      systems: function($http){ 
+      systems: function($http){
         return $http.get(ENVIROMENT + "api/system/").then(function (response) {
             return response.data;
         });
@@ -193,17 +193,17 @@ var systemState = {
     url: '/client_system_edit/:idclientsystem',
     template: "<modman-client-system-edit clients='$resolve.clients' systems='$resolve.systems' clientsystem='$resolve.clientsystem'></modman-client-system-edit>",
     resolve: {
-      clientsystem: function($http, $stateParams){ 
+      clientsystem: function($http, $stateParams){
         return $http.get(ENVIROMENT + "api/client_system/" + $stateParams.idclientsystem).then(function (response) {
             return response.data;
         });
       },
-      clients: function($http){ 
+      clients: function($http){
         return $http.get(ENVIROMENT + "api/client").then(function (response) {
             return response.data;
         });
       },
-      systems: function($http){ 
+      systems: function($http){
         return $http.get(ENVIROMENT + "api/system/").then(function (response) {
             return response.data;
         });
@@ -218,9 +218,8 @@ var systemModuleState = {
     url: '/system_modules',
     template: "<modman-system-modules systemmodules='$resolve.systemmodules'></modman-system-modules>",
     resolve: {
-      systemmodules: function($http){ 
+      systemmodules: function($http){
         return $http.get(ENVIROMENT + "api/system_module/").then(function (response) {
-            console.log(response.data);
             return response.data;
         });
       }
@@ -232,12 +231,12 @@ var systemModuleRegisterState = {
   url: '/system_module_register',
   template: "<modman-system-module-register modules='$resolve.modules' systems='$resolve.systems'></modman-system-module-register>",
   resolve: {
-    modules: function($http){ 
+    modules: function($http){
       return $http.get(ENVIROMENT + "api/module").then(function (response) {
           return response.data;
       });
     },
-    systems: function($http){ 
+    systems: function($http){
       return $http.get(ENVIROMENT + "api/system/").then(function (response) {
           return response.data;
       });
@@ -250,17 +249,17 @@ var systemModuleRegisterState = {
     url: '/system_module_edit/:idsystemmodule',
     template: "<modman-system-module-edit systemmodule='$resolve.systemmodule' modules='$resolve.modules' systems='$resolve.systems'></modman-system-module-edit>",
     resolve: {
-      systemmodule: function($http, $stateParams){ 
+      systemmodule: function($http, $stateParams){
         return $http.get(ENVIROMENT + "api/system_module/" + $stateParams.idsystemmodule).then(function (response) {
             return response.data;
         });
       },
-      modules: function($http){ 
+      modules: function($http){
         return $http.get(ENVIROMENT + "api/module").then(function (response) {
             return response.data;
         });
       },
-      systems: function($http){ 
+      systems: function($http){
         return $http.get(ENVIROMENT + "api/system/").then(function (response) {
             return response.data;
         });
@@ -275,7 +274,7 @@ var systemModuleRegisterState = {
     url: '/functionalities',
     template: "<modman-functionalities functionalities='$resolve.functionalities'></modman-functionalities>",
     resolve: {
-      functionalities: function($http){ 
+      functionalities: function($http){
         return $http.get(ENVIROMENT + "api/module_functionality").then(function (response) {
             return response.data;
         });
@@ -288,7 +287,7 @@ var systemModuleRegisterState = {
     url: '/functionality_register',
     template: "<modman-functionality-register modules='$resolve.modules'></modman-functionality-register>",
     resolve:{
-      modules: function($http){ 
+      modules: function($http){
         return $http.get(ENVIROMENT + "api/module").then(function (response) {
             return response.data;
         });
@@ -306,13 +305,13 @@ var systemModuleRegisterState = {
           return response.data;
         });
       },
-      modules: function($http){ 
+      modules: function($http){
         return $http.get(ENVIROMENT + "api/module").then(function (response) {
             return response.data;
         });
       }
     }
-  } 
+  }
 
 //=================Cliente-Sistema/Módulo-Funcionalidade/Perfil=================
 
@@ -321,7 +320,7 @@ var systemModuleRegisterState = {
     url: '/cli_sys_mod_func_profile',
     template: "<modman-cli-sys_mod-func-profile clisysmodfuncprofiles='$resolve.clisysmodfuncprofiles'></modman-cli-sys-mod-func-profile>",
     resolve: {
-      clisysmodfuncprofiles: function($http){ 
+      clisysmodfuncprofiles: function($http){
         return $http.get(ENVIROMENT + "api/cli_sys_mod_func_profile/").then(function (response) {
             return response.data;
         });
@@ -332,19 +331,19 @@ var systemModuleRegisterState = {
   var cliSysModFuncProfileRegisterState = {
     name: 'cli_sys_mod_func_profile_register',
     url: '/cli_sys_mod_func_profile_register',
-    template: "<modman-cli-sys_mod-func-profile-register clientsystems='$resolve.clientsystems' module_functionalities='$resolve.module_functionalities' profiles='$resolve.profiles'></modman-cli-sys_mod-func-profile-register>",
+    template: "<modman-cli-sys_mod-func-profile-register clientsystems='$resolve.clientsystems' modulefunctionalities='$resolve.modulefunctionalities' profiles='$resolve.profiles'></modman-cli-sys_mod-func-profile-register>",
     resolve: {
-      clientsystems: function($http, $stateParams){ 
+      clientsystems: function($http, $stateParams){
         return $http.get(ENVIROMENT + "api/client_system/").then(function (response) {
             return response.data;
         });
       },
-      module_functionalities: function($http){ 
+      modulefunctionalities: function($http){
         return $http.get(ENVIROMENT + "api/module_functionality").then(function (response) {
             return response.data;
         });
       },
-      profiles: function($http){ 
+      profiles: function($http){
         return $http.get(ENVIROMENT + "api/profile").then(function (response) {
             return response.data;
         });
@@ -355,19 +354,26 @@ var systemModuleRegisterState = {
 var cliSysModFuncProfileEditState = {
     name: 'cli_sys_mod_func_profile_edit',
     url: '/cli_sys_mod_func_profile_edit/:idclisysmodfuncprofile',
-    template: "<modman-cli-sys_mod-func-profile-edit clientsystems='$resolve.clientsystems' module_functionalities='$resolve.module_functionalities' profiles='$resolve.profiles'></modman-cli-sys_mod-func-profile-edit>",
+    template: "<modman-cli-sys_mod-func-profile-edit clisysmodfuncprofile='$resolve.clisysmodfuncprofile' clientsystems='$resolve.clientsystems' modulefunctionalities='$resolve.modulefunctionalities' profiles='$resolve.profiles'></modman-cli-sys_mod-func-profile-edit>",
     resolve: {
-      clientsystems: function($http, $stateParams){ 
+      clisysmodfuncprofile: function($http, $stateParams){
+        console.log($stateParams.idclisysmodfuncprofile);
+        return $http.get(ENVIROMENT + 'api/cli_sys_mod_func_profile/' + $stateParams.idclisysmodfuncprofile).then(function (response) {
+          console.log(response.data);
+          return response.data;
+        });
+      },
+      clientsystems: function($http, $stateParams){
         return $http.get(ENVIROMENT + "api/client_system/").then(function (response) {
             return response.data;
         });
       },
-      module_functionalities: function($http){ 
+      modulefunctionalities: function($http){
         return $http.get(ENVIROMENT + "api/module_functionality").then(function (response) {
             return response.data;
         });
       },
-      profiles: function($http){ 
+      profiles: function($http){
         return $http.get(ENVIROMENT + "api/profile").then(function (response) {
             return response.data;
         });
@@ -381,7 +387,7 @@ var cliSysModFuncProfileEditState = {
   $stateProvider.state(clientState);
   $stateProvider.state(clientRegisterState);
   $stateProvider.state(clientEditState);
-  
+
   $stateProvider.state(systemState);
   $stateProvider.state(systemRegisterState);
   $stateProvider.state(systemEditState);
@@ -390,7 +396,7 @@ var cliSysModFuncProfileEditState = {
   $stateProvider.state(moduleRegisterState);
   $stateProvider.state(moduleEditState);
 
-  $stateProvider.state(profileState);  
+  $stateProvider.state(profileState);
   $stateProvider.state(profileRegisterState);
   $stateProvider.state(profileEditState);
 

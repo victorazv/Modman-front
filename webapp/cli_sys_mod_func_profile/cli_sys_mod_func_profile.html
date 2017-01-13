@@ -1,6 +1,6 @@
 <div style="text-align: center;">
   <button class="btn btn-primary" ui-sref="cli_sys_mod_func_profile_register">Nova Funcionalidade/cliente</button>
-  <h2>Consulta das Funcionalidades/Clientes</h2>
+  <h2>Consulta das Funcionalidades/Clientes/Perfil</h2>
 </div>
 
 <div class="row">
@@ -17,6 +17,7 @@
       </tr>
     </thead>
     <tbody>
+
       <tr ng-repeat="clisysmodfuncprofile in $ctrl.clisysmodfuncprofiles">
         <td>
           <a ng-click="$ctrl.deleteData(clisysmodfuncprofile)" class='btn btn-danger btn-sm'> <span class="glyphicon glyphicon-trash"  aria-hidden="true"></span></a>
@@ -29,6 +30,6 @@
         <td>{{clisysmodfuncprofile.profile}}</td>
       </tr>
     </tbody>
-  </table>    
+  </table>
   </div>
 </div>

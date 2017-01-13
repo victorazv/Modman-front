@@ -1,7 +1,7 @@
 function CliSysModFuncProfileEditComponentController($http, ENVIROMENT, $stateParams, ngToast){
 	var self = this;
 	self.registerData = registerData;
-	self.title = "Edição de Funcionalidade/Cliente";
+	self.title = "Edição de Funcionalidade/Cliente/Perfil";
 	self.buttonLabel = "Salvar";
 
 	function registerData(clisysmodfuncprofile){
@@ -22,7 +22,7 @@ modman.component('modmanCliSysModFuncProfileEdit', {
 	bindings: {
 		clisysmodfuncprofile: '<',
 		clientsystems: '<',
-		module_functionalities: '<',
+		modulefunctionalities: '<',
 		profiles: '<'
 	}
 });

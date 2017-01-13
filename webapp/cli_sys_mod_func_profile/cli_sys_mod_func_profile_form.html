@@ -10,11 +10,11 @@
         <option value=""></option>
     </select>
 	<br>
-	
-    <label>Funcionalidade <span style="color:#e74c3c">*</span></label>
-    <select class="form-control" ng-model="$ctrl.clisysmodfuncprofile.id_module_functionality" ng-options="module_functionality.id as module_functionality.functionality for module_functionality in $ctrl.module_functionalities" required autofocus="">
+
+    <label>Funcionalidade/Módulo <span style="color:#e74c3c">*</span></label>
+    <select class="form-control" ng-model="$ctrl.clisysmodfuncprofile.id_module_functionality" ng-options="modulefunctionality.id as modulefunctionality.functionality + ' - ' + modulefunctionality.module for modulefunctionality in $ctrl.modulefunctionalities" required autofocus="">
         <option value=""></option>
-    </select> 
+    </select>
     <br>
 
     <label>Perfil <span style="color:#e74c3c">*</span></label>
