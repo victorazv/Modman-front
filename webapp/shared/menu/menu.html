@@ -1,0 +1,35 @@
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Modman</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">          
+          <li ng-if="$ctrl.authenticated" ui-sref-active="home"><a ui-sref="app.home">Home</a></li>
+          <li ng-if="!$ctrl.authenticated" ui-sref-active="login"><a ui-sref="login">Login</a></li>
+          <li ng-if="$ctrl.authenticated"class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Configurações<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li ui-sref-active="users"><a ui-sref="app.users">Usuários</a></li>
+                <li ui-sref-active="clients"><a ui-sref="app.clients">Clientes</a></li>
+                <li ui-sref-active="systems"><a ui-sref="app.systems">Sistemas</a></li>
+                <li ui-sref-active="modules"><a ui-sref="app.modules">Módulos</a></li>
+                <li ui-sref-active="profiles"><a ui-sref="app.profiles">Perfis</a></li>
+              </ul>
+            </li>
+  
+          <li ng-if="$ctrl.authenticated" ui-sref-active="client_systems"><a ui-sref="app.client_systems">Cliente/Sistemas</a></li>              
+          <li ng-if="$ctrl.authenticated" ui-sref-active="system_modules"><a ui-sref="app.system_modules">Sistema/Módulos</a></li>
+          <li ng-if="$ctrl.authenticated" ui-sref-active="functionalities"><a ui-sref="app.functionalities">Funcionalidades</a></li>
+          <li ng-if="$ctrl.authenticated" ui-sref-active="cli_sys_mod_func_profile"><a ui-sref="app.cli_sys_mod_func_profile">Funcionalidades/Cliente</a></li>
+          <li ng-if="$ctrl.authenticated"><a ng-click="$ctrl.logout()">Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>

@@ -1,15 +1,15 @@
 <form class="form-signin">
-        <h2 class="form-signin-heading" style="text-align: center;">Login</h2>
-        <!--{{$ctrl.teste}}-->
-        <label for="inputEmail" class="sr-only">Email</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-        <br>
-        <label for="inputPassword" class="sr-only">Senha</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-        <!--<div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Lembrar
-          </label>
-        </div>-->
-        <button class="btn btn-primary btn-block" ui-sref="home">Entrar</button>
+    <h2 class="form-signin-heading" style="text-align: center;">Login</h2>
+    <!--{{$ctrl.teste}}-->
+    <label class="sr-only">Email</label>
+    <input type="text" ng-model="$ctrl.user.email" class="form-control" placeholder="Email" required autofocus>
+    <br>
+    <label class="sr-only">Senha</label>
+    <input type="password" ng-model="$ctrl.user.password" class="form-control" placeholder="Senha" required>
+    <!--<div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me"> Lembrar
+      </label>
+    </div>-->
+    <button class="btn btn-primary btn-block" ng-click="$ctrl.authenticate($ctrl.user)">Entrar</button>
 </form>

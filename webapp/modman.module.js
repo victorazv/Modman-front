@@ -1,4 +1,9 @@
 'use strict';
 
-var modman = angular.module('modman', ['ui.router', 'ngToast'])
+var modman = angular.module('modman', [
+	'ui.router', 
+	'ngToast', 
+	'oitozero.ngSweetAlert', 
+	'satellizer', 
+	'LocalStorageModule'])
 					.constant('ENVIROMENT', 'http://modman.dev/');
