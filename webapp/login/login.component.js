@@ -9,12 +9,10 @@ function LoginComponentController($http, ENVIROMENT, ngToast, $location, AuthSer
     };
 
     function authenticate(user){
-        AuthService.authenticate(user).then(function(response){
-			console.log('to bem');
-            var name = localStorageService.get('authUser').name;
-            $state.go('home');
-        }).catch(function(response){
-			console.log('deu merda');
+        AuthService.authenticate(user).then(function(){
+            SweetAlert.swal("Bem vindo", "", "success");
+            $state.go('app.home');
+        }, function(){
             SweetAlert.swal("Erro ao fazer login", "Email ou senha não conferem. Tente novamente.", "error");
         });
     }

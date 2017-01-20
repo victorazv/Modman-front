@@ -24,12 +24,12 @@ modman.config(function($stateProvider, ENVIROMENT, $injector, $urlRouterProvider
     data: {
       auth: false,
     },
-    url: 'login',
+    url: '/login',
     template: '<modman-login></modman-login>'
   }
 
 //=================Usuário=================
-
+// bota ai no crhome ou 
  var userState = {
     name: 'app.users',
     url: 'users',
@@ -540,8 +540,8 @@ var cliSysModFuncProfileEditState = {
   }
 
   //$locationProvider.html5Mode(true).hashPrefix('!');
-
-  $urlRouterProvider.otherwise('/login');
+    
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider.state(appState);  
   $stateProvider.state(homeState);
