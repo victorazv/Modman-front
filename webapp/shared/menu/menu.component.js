@@ -1,4 +1,4 @@
-function MenuComponentController(AuthService){
+function MenuComponentController(AuthService, $state){
    var self = this;
 
     self.authenticated = AuthService.isAuthenticated();
@@ -7,6 +7,7 @@ function MenuComponentController(AuthService){
     function logout(){
         AuthService.logout();
         self.authenticated = AuthService.isAuthenticated();
+        $state.go('login');
     }
 
    

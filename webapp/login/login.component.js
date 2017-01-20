@@ -1,4 +1,4 @@
-function LoginComponentController($http, ENVIROMENT, ngToast, $location, AuthService, SweetAlert){
+function LoginComponentController($http, ENVIROMENT, ngToast, $location, AuthService){
    var self = this;
 
     self.authenticate = authenticate;
@@ -9,12 +9,7 @@ function LoginComponentController($http, ENVIROMENT, ngToast, $location, AuthSer
     };
 
     function authenticate(user){
-        AuthService.authenticate(user).then(function(){
-            SweetAlert.swal("Bem vindo", "", "success");
-            $state.go('app.home');
-        }, function(){
-            SweetAlert.swal("Erro ao fazer login", "Email ou senha não conferem. Tente novamente.", "error");
-        });
+        AuthService.authenticate(user);
     }
 }
 
