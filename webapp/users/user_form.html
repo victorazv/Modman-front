@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-  	<button class="btn btn-primary" ui-sref="app.users">Voltar</button>
+  	<button class="btn btn-primary" ui-sref="app.home">Voltar</button>
     <h2>{{$ctrl.title}}</h2>
     <br>
 </div>
@@ -14,7 +14,7 @@
     <br>
 
     <label>Senha <span style="color:#e74c3c">*</span></label>
-    <input type="text" id="senha" ng-model="$ctrl.user.password" class="form-control" required autofocus>
+    <input type="password" id="senha" ng-model="$ctrl.user.password" class="form-control" required autofocus>
     <br>
 
     <button class="btn btn-primary btn-block" type="submit" ng-click="$ctrl.registerData($ctrl.user)">{{$ctrl.buttonLabel}}</button>

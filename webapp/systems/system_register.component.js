@@ -6,7 +6,6 @@ function SystemRegisterComponentController($http, ENVIROMENT, ngToast, $location
 	self.buttonLabel = "Cadastrar"
 
 	function registerData(system){
-		system.id_users = window.localStorage.getItem("id_user");
 		return $http.post(ENVIROMENT + 'api/system', system).then(function(response){
 			ngToast.create('Registro inserido com sucesso !');
 			$location.path('system_edit/' + response.data.id);

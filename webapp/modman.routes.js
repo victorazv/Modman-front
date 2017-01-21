@@ -29,7 +29,6 @@ modman.config(function($stateProvider, ENVIROMENT, $injector, $urlRouterProvider
   }
 
 //=================Usuário=================
-// bota ai no crhome ou 
  var userState = {
     name: 'app.users',
     url: 'users',
@@ -515,9 +514,7 @@ var cliSysModFuncProfileEditState = {
     },
     resolve: {
       clisysmodfuncprofile: function($http, $stateParams){
-        console.log($stateParams.idclisysmodfuncprofile);
         return $http.get(ENVIROMENT + 'api/cli_sys_mod_func_profile/' + $stateParams.idclisysmodfuncprofile).then(function (response) {
-          console.log(response.data);
           return response.data;
         });
       },

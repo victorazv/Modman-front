@@ -6,7 +6,6 @@ function ProfileRegisterComponentController($http, ENVIROMENT, ngToast, $locatio
 	self.buttonLabel = "Cadastrar"
 
 	function registerData(profile){
-		profile.id_users = window.localStorage.getItem("id_user");
 		return $http.post(ENVIROMENT + 'api/profile', profile).then(function(response){
 			ngToast.create('Registro inserido com sucesso !');
 			$location.path('profile_edit/' + response.data.id);

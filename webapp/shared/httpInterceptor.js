@@ -17,7 +17,7 @@ function HttpInterceptor($q, $injector) {
         },
         // On response failture
         responseError: function (rejection) {
-            //console.log(rejection); // Contains the data about the error.
+             // Contains the data about the error.
             var state = $injector.get('$state');
             var auth = $injector.get('$auth');
             var SweetAlert = $injector.get('SweetAlert');

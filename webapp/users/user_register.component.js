@@ -7,8 +7,9 @@ function UserRegisterComponentController($http, ENVIROMENT, ngToast, $location){
 
 	function registerData(user){
 		return $http.post(ENVIROMENT + 'api/user', user).then(function(response){
-			ngToast.create('Registro inserido com sucesso !');
-			$location.path('user_edit/' + response.data.id);
+			ngToast.create('Registro inserido com sucesso, realizer o login !');
+			$location.path('login');
+			//$location.path('user_edit/' + response.data.id);
 		}).catch(function(){
 			ngToast.create({
 			  className: 'warning',
