@@ -1,8 +1,6 @@
 function AppComponentController(AuthService){
    var self = this;
 
-   console.log('teste');
-   
 }
 
 
