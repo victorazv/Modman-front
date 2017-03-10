@@ -6,4 +6,4 @@ var modman = angular.module('modman', [
 	'oitozero.ngSweetAlert', 
 	'satellizer', 
 	'LocalStorageModule'])
-					.constant('ENVIROMENT', 'http://modman.dev/');
+					.constant('ENVIROMENT', 'http://api.modman.ga/');
