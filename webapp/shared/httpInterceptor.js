@@ -31,7 +31,7 @@ function HttpInterceptor($q, $injector) {
             }
 
             // TODO: Lembrar de mudar isso. Colocar uma variável de ambiente.
-            if (rejection.status === 401 && reject.config.url != 'http://modman.dev/api/authenticate') {
+            if (rejection.status === 401 && reject.config.url != 'http://api.modman.ga/authenticate') {
                 state.go('login');
                 SweetAlert.swal('Ops!', 'Acesso Negado', 'error');
             }
