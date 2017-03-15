@@ -1,5 +1,6 @@
 'use strict';
 //http://modman.dev/
+//http://api.modman.ga/
 var modman = angular.module('modman', [
 	'ui.router', 
 	'ngToast', 

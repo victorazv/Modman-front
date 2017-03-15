@@ -276,7 +276,7 @@ var systemState = {
     },
     resolve: {
       clientsystems: function($http){
-        return $http.get(ENVIROMENT + "api/client_system/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/client_system").then(function (response) {
             return response.data;
         });
       }
