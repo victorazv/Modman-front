@@ -240,7 +240,7 @@ var systemState = {
     },
     resolve: {
       profiles: function($http){
-        return $http.get(ENVIROMENT + "api/profile/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/profile").then(function (response) {
             return response.data;
         });
       }
@@ -298,7 +298,7 @@ var systemState = {
         });
       },
       systems: function($http){
-        return $http.get(ENVIROMENT + "api/system/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/system").then(function (response) {
             return response.data;
         });
       }
@@ -325,7 +325,7 @@ var systemState = {
         });
       },
       systems: function($http){
-        return $http.get(ENVIROMENT + "api/system/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/system").then(function (response) {
             return response.data;
         });
       }
@@ -366,7 +366,7 @@ var systemModuleRegisterState = {
       });
     },
     systems: function($http){
-      return $http.get(ENVIROMENT + "api/system/").then(function (response) {
+      return $http.get(ENVIROMENT + "api/system").then(function (response) {
           return response.data;
       });
     }
@@ -393,7 +393,7 @@ var systemModuleRegisterState = {
         });
       },
       systems: function($http){
-        return $http.get(ENVIROMENT + "api/system/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/system").then(function (response) {
             return response.data;
         });
       }
@@ -487,7 +487,7 @@ var systemModuleRegisterState = {
     },
     resolve: {
       clientsystems: function($http, $stateParams){
-        return $http.get(ENVIROMENT + "api/client_system/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/client_system").then(function (response) {
             return response.data;
         });
       },
@@ -519,7 +519,7 @@ var cliSysModFuncProfileEditState = {
         });
       },
       clientsystems: function($http, $stateParams){
-        return $http.get(ENVIROMENT + "api/client_system/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/client_system").then(function (response) {
             return response.data;
         });
       },
