@@ -131,7 +131,7 @@ var systemState = {
     },
     resolve: {
       systems: function($http){
-        return $http.get(ENVIROMENT + "api/system/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/system").then(function (response) {
             return response.data;
         });
       }
@@ -177,7 +177,7 @@ var systemState = {
     },
     resolve: {
       modules: function($http){
-        return $http.get(ENVIROMENT + "api/module/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/module").then(function (response) {
             return response.data;
         });
       }
@@ -223,7 +223,7 @@ var systemState = {
     },
     resolve: {
       profiles: function($http){
-        return $http.get(ENVIROMENT + "api/profile/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/profile").then(function (response) {
             return response.data;
         });
       }
@@ -344,7 +344,7 @@ var systemModuleState = {
     },
     resolve: {
       systemmodules: function($http){
-        return $http.get(ENVIROMENT + "api/system_module/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/system_module").then(function (response) {
             return response.data;
         });
       }
@@ -470,7 +470,7 @@ var systemModuleRegisterState = {
     },
     resolve: {
       clisysmodfuncprofiles: function($http){
-        return $http.get(ENVIROMENT + "api/cli_sys_mod_func_profile/").then(function (response) {
+        return $http.get(ENVIROMENT + "api/cli_sys_mod_func_profile").then(function (response) {
             return response.data;
         });
       }
