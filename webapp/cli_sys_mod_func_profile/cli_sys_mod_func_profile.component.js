@@ -3,6 +3,7 @@ function SystemModulesComponentController($http, ENVIROMENT, ngToast){
 	self.deleteData = deleteData;
 
 	function deleteData(clisysmodfuncprofile){
+		console.log(clisysmodfuncprofile.id);
 		return $http.delete(ENVIROMENT + 'api/cli_sys_mod_func_profile/' + clisysmodfuncprofile.id)
 		.then(function(response){
 			ngToast.create('Registro excluído com sucesso !');
